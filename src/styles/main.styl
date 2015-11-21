@@ -1,5 +1,7 @@
 @import "reset.css"
 
+content-max-width = 940px
+
 body
 	margin 0
 
@@ -18,6 +20,7 @@ body
 	counter-reset project
 
 .work__project
+	overflow hidden
 	color black
 	background none
 	counter-increment project
@@ -32,7 +35,7 @@ body
 	align-items center
 	position relative
 	height 100px
-	max-width 940px
+	max-width content-max-width
 	margin 0 auto
 	border-top 1px solid rgba(0, 0, 0, .1)
 	box-sizing border-box
@@ -107,3 +110,47 @@ body
 .work__meta__field-name,
 .work__meta__field-value
 	display inline-block
+
+.about__header,
+.awards__header,
+.contact__header
+	font-size 16px
+	text-transform uppercase
+	
+	&:after
+		content: ''
+		display inline-block
+		width 25px
+		height 1px
+		margin-left .875em
+		vertical-align middle
+		background black	
+
+/**
+ * About
+ */
+
+.about
+	max-width content-max-width
+	margin 0 auto
+	
+.about p
+	font-size 38px
+	line-height 1.3157
+
+	
+/**
+ * Awards
+ */
+
+.awards
+	max-width content-max-width
+	margin 0 auto
+
+/**
+ * Contact
+ */
+
+.contact
+	max-width content-max-width
+	margin 0 auto
