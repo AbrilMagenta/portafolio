@@ -1,18 +1,22 @@
-var $ = require('jquery');
-var Work = require('./work');
 
+var $ = require('jquery');
+
+
+/*CORE*/
+var Work = require('./work');
 var Particles = require('./Particles');
 
-var work = new Work(document.querySelector('.work'));
+
+/*ELEMENTS*/
+var particlesContainer = document.querySelector('#background');
 
 
-var VideoExperience = ( function( window, undefined ) {
+/*INIT CORE*/
+var work = new Work( document.querySelector('.work') );
 
-	var particlesContainer = document.querySelector('#background');
-
-	var particles = new Particles( particlesContainer );
+var particles = new Particles( particlesContainer );
 
 
-} )( window );
+/*CUSTOM FUNCTIONS*/
 
-/*VideoExperience.init();*/
+document.querySelector('.intro').style.height = window.innerHeight + 'px';

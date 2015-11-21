@@ -1,0 +1,25 @@
+@font-face {
+	font-family:'Apercu-Medium';
+	src: url('../assets/fonts/Apercu-Medium_gdi.eot');
+	src: url('../assets/fonts/Apercu-Medium_gdi.eot?#iefix') format('embedded-opentype'),
+		url('../assets/fonts/Apercu-Medium_gdi.woff') format('woff'),
+		url('../assets/fonts/Apercu-Medium_gdi.ttf') format('truetype'),
+		url('../assets/fonts/Apercu-Medium_gdi.svg#Apercu-Medium') format('svg');
+	font-weight: 500;
+	font-style: normal;
+	font-stretch: normal;
+	unicode-range: U+0020-25CA;
+}
+
+@font-face {
+	font-family:'Didot-Regular';
+	src: url('../assets/fonts/Didot_gdi.eot');
+	src: url('../assets/fonts/Didot_gdi.eot?#iefix') format('embedded-opentype'),
+		url('../assets/fonts/Didot_gdi.woff') format('woff'),
+		url('../assets/fonts/Didot_gdi.ttf') format('truetype'),
+		url('../assets/fonts/Didot_gdi.svg#Didot-Regular') format('svg');
+	font-weight: 400;
+	font-style: normal;
+	font-stretch: normal;
+	unicode-range: U+0-10FFFF;
+}

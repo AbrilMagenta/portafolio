@@ -1,16 +1,19 @@
 var $ = require('jquery');
 
+
 var SVG = require("./vendors/svg");
 
 var Particles = function  ( dom ) {
     
-    var density = 20,
+    var density = 40,
         speed = 0.2,
         maxSize = 15,
         minSize = 10,
         fullHeight = window.innerHeight,
         fullWidth = window.innerWidth,
         num = 0,
+        randomScale, 
+        randomTime,
 
         element = dom,
 
@@ -20,20 +23,18 @@ var Particles = function  ( dom ) {
 
 /*      SVG Styles*/
 
-        shapeColor = '#eaeaea';
+        shapeColor = '#e9e9e9';
 
-    init();
 
-    function init () {
         
-        createWrapper();
+    createWrapper();
 
+    for (var i = 0; i < density; i++) {
+        
+        createShape();
+    
+    };
 
-        for (var i = 0; i < density; i++) {
-
-            createShape();
-        };
-    }
 
     function createWrapper () {
 
@@ -54,7 +55,7 @@ var Particles = function  ( dom ) {
             break;
 
             case 1:
-                shape = shapesContainer.rect(shapeW, shapeW).attr({stroke: shapeColor, 'fill-opacity': 0, 'stroke-width': 2}).move(100, 500)
+                shape = shapesContainer.rect(shapeW, shapeW).attr({stroke: shapeColor, fill: shapeColor, 'stroke-width': 2}).move(100, 500)
             break;
 
             case 2:
@@ -65,32 +66,15 @@ var Particles = function  ( dom ) {
                 shape = shapesContainer.path('M 36.521,94.728 106.934,94.728 106.934,24.313 Z').attr({ stroke:shapeColor, 'fill-opacity': 0, 'stroke-width': 2})
             break;
             }                   
-          
-        shape.translate(Math.floor(Math.random() * fullWidth) + 0, Math.floor(Math.random() * fullHeight) + -100)  
-    }
+        
+        randomScale = Math.random() * 0.6 + 0.3;
+        randomTime = Math.floor(Math.random() * 7000) + 5000;
 
-    function animatePosition (num) {
-        for (var i = 0; i < allShapes.length; i++) {
-
-
-
-        };
-
-    }
-
-    function animate () {
-   /*     num = num + 1;*/
-        renderer.render(stage);
-        requestAnimationFrame( animate );
-        animatePosition(num);
+        shape.scale(randomScale);
+        shape.translate(Math.floor(Math.random() * fullWidth) + 0, Math.floor(Math.random() * fullHeight) + -100);
+        shape.animate(randomTime, '>').rotate(Math.floor(Math.random() * 360) + -360).loop(0, true);
         
     }
-
-
-    return {
-
-
-    } 
 
 }
 
