@@ -14,9 +14,15 @@ var particlesContainer = document.querySelector('#background');
 /*INIT CORE*/
 var work = new Work( document.querySelector('.work') );
 
-var particles = new Particles( particlesContainer );
 
 
 /*CUSTOM FUNCTIONS*/
+
+
+$(function() {
+	
+  var particles = new Particles( particlesContainer );
+
+});
 
 document.querySelector('.intro').style.height = window.innerHeight + 'px';

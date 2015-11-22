@@ -5,12 +5,12 @@ var SVG = require("./vendors/svg");
 
 var Particles = function  ( dom ) {
     
-    var density = 40,
+    var density = 50,
         speed = 0.2,
         maxSize = 15,
         minSize = 10,
-        fullHeight = window.innerHeight,
-        fullWidth = window.innerWidth,
+        fullHeight = $("#container").height(),
+        fullWidth =  $("#container").width(),
         num = 0,
         randomScale, 
         randomTime,
@@ -31,7 +31,7 @@ var Particles = function  ( dom ) {
 
     for (var i = 0; i < density; i++) {
         
-        createShape();
+        createShape(1.2, 0.3);
     
     };
 
@@ -42,11 +42,11 @@ var Particles = function  ( dom ) {
 
     }
 
-    function createShape () {
+    function createShape (MaxScale, MinScale) {
 
         shapeR =  Math.floor(Math.random() * maxSize) + minSize,
         shapeW = Math.floor(Math.random() * maxSize) + minSize,
-        randomNumb = Math.floor(Math.random() * 4) + 0;
+        randomNumb = Math.floor(Math.random() * 2) + 0;
                
         switch(randomNumb) {
 
@@ -59,20 +59,21 @@ var Particles = function  ( dom ) {
             break;
 
             case 2:
-                shape = shapesContainer.path('M 0.428,125.405 -0.061,123.465 30.212,115.83 37.997,84.975 68.851,77.19 76.638,46.334 107.492,38.549 115.28,7.691 146.717,-0.243 147.207,1.697 116.927,9.338 109.139,40.196 78.284,47.981 70.499,78.836 39.645,86.622 31.86,117.476 Z').attr({ fill: shapeColor })
+                shape = shapesContainer.path('M 36.521,94.728 106.934,94.728 106.934,24.313 Z').attr({ stroke:shapeColor, 'fill-opacity': 0, 'stroke-width': 2})
+                
             break;
 
             case 3:
-                shape = shapesContainer.path('M 36.521,94.728 106.934,94.728 106.934,24.313 Z').attr({ stroke:shapeColor, 'fill-opacity': 0, 'stroke-width': 2})
+                shape = shapesContainer.path('M 0.428,125.405 -0.061,123.465 30.212,115.83 37.997,84.975 68.851,77.19 76.638,46.334 107.492,38.549 115.28,7.691 146.717,-0.243 147.207,1.697 116.927,9.338 109.139,40.196 78.284,47.981 70.499,78.836 39.645,86.622 31.86,117.476 Z').attr({ fill: shapeColor })
             break;
             }                   
         
-        randomScale = Math.random() * 0.6 + 0.3;
-        randomTime = Math.floor(Math.random() * 7000) + 5000;
+        randomScale = Math.random() * MaxScale + MinScale;
+        randomTime = Math.floor(Math.random() * 8000) + 3000;
 
         shape.scale(randomScale);
         shape.translate(Math.floor(Math.random() * fullWidth) + 0, Math.floor(Math.random() * fullHeight) + -100);
-        shape.animate(randomTime, '>').rotate(Math.floor(Math.random() * 360) + -360).loop(0, true);
+        shape.animate(randomTime, '>').rotate(Math.floor(Math.random() * 1000) + -1000).loop(0, true);
         
     }
 
