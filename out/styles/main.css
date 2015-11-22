@@ -5,6 +5,7 @@ html {
 }
 body {
   margin: 0;
+  font-family: 'Apercu-Medium';
 }
 /*BACKGROUND*/
 #background {
@@ -25,6 +26,11 @@ body {
   right: 60px;
   clear: both;
   z-index: 2;
+}
+@media (max-width: 641px) {
+  .navigation {
+    display: none;
+  }
 }
 .each-navigation {
   display: inline-block;
@@ -111,24 +117,27 @@ body {
  * Work
  */
 .work__header {
+  font-family: 'Didot-Regular';
   font-size: 52px;
   text-align: center;
 }
 .work__project-list {
-  margin: 0;
+  margin: 20px 0 0;
   padding: 0;
   list-style: none;
   counter-reset: project;
 }
 .work__project {
+  counter-increment: project;
   overflow: hidden;
   color: #000;
-  background: none;
-  counter-increment: project;
+  background: rgba(0,0,0,0);
+  transition: all 150ms linear;
 }
 .work__project_focus {
   color: #fff;
   background: #000;
+  transition-duration: 150ms;
 }
 .work__hit-field {
   display: flex;
@@ -156,6 +165,7 @@ body {
   margin-top: -10px;
   background: url("../assets/img/arrow.svg") 0 0/contain no-repeat;
   transform: translateX(-100%);
+  transition: all 300ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 .work__hit-field_focus:after {
   background-image: url("../assets/img/arrow-focus.svg");
@@ -163,25 +173,31 @@ body {
 }
 .work__agency {
   width: 21%;
+  font-family: 'Didot-Regular';
   font-size: 32px;
+  color: #fff;
   opacity: 0;
-  transition: all 300ms linear;
+  transition: opacity 0 linear;
 }
 .work__agency_focus {
   opacity: 1;
+  transition-duration: 250ms;
+  transition-delay: 50ms;
 }
 .work__project-name {
   position: relative;
   left: -21%;
-  width: 28%;
+  width: 35%;
   font-size: 16px;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
-  transition: all 300ms ease-out;
+  transition: all 300ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 .work__project-name:before {
   content: '. ' counter(project, decimal-leading-zero);
   display: inline-block;
   width: 24%;
+  font-family: 'Didot-Regular';
   opacity: 0.6;
 }
 .work__project-name_focus {
@@ -191,15 +207,20 @@ body {
   display: flex;
   flex-direction: row;
   list-style: none;
-  width: 50%;
+  width: 44%;
   margin: 0;
   padding: 0;
   font-size: 11px;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
+  transform: translateX(-30%);
   opacity: 0;
+  transition: all 0 step-end;
 }
 .work__meta_focus {
   opacity: 1;
+  transform: translateX(0);
+  transition: transform 300ms cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 300ms linear;
 }
 .work__meta__item {
   margin-left: 2.5em;
@@ -211,11 +232,15 @@ body {
 .work__meta__field-value {
   display: inline-block;
 }
+.work__meta__field-value {
+  font-family: 'Apercu-Light';
+}
 .about__header,
 .awards__header,
 .contact__header {
   width: 21%;
   font-size: 16px;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
 }
 .about__header:after,
@@ -234,7 +259,7 @@ body {
  */
 .about {
   max-width: 940px;
-  margin: 0 auto;
+  margin: 60px auto 0;
 }
 .about p {
   font-size: 38px;
@@ -247,14 +272,17 @@ body {
   display: flex;
   flex-direction: row;
   max-width: 940px;
-  margin: 0 auto;
+  margin: 80px auto 0;
 }
 .awards__list {
-  margin: 0;
+  margin: -0.778em 0 0;
   padding: 0;
   list-style: none;
   font-size: 18px;
   line-height: 2.33;
+}
+.awards__project {
+  font-family: 'Apercu-Light';
 }
 .awards__project:before {
   content: '\2014' ' ';
@@ -266,9 +294,15 @@ body {
   display: flex;
   flex-direction: row;
   max-width: 940px;
-  margin: 0 auto;
+  margin: 70px auto 0;
+}
+.contact__body {
+  flex: 1;
 }
 .contact__email {
+  display: inline-block;
+  margin-top: -0.22em;
+  font-family: 'Apercu-Light';
   font-size: 36px;
   text-decoration: none;
   color: inherit;
@@ -276,15 +310,17 @@ body {
 .contact__social-network-list {
   display: flex;
   flex-direction: row;
-  margin: 0;
+  margin: 1.5em 0 0;
   padding: 0;
   list-style: none;
+  font-family: 'Apercu-Bold';
+  font-size: 14px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
 }
 .contact__social-network {
   position: relative;
   margin-left: 7.85em;
-  font-size: 14px;
-  text-transform: uppercase;
 }
 .contact__social-network:before {
   content: '';
@@ -304,4 +340,16 @@ body {
 .contact__social-network a {
   text-decoration: none;
   color: inherit;
+}
+.contact__back-to-top {
+  width: 21px;
+  height: 83px;
+  background: url("../assets/img/back-to-top.svg") no-repeat 0 0/contain;
+}
+.diamond {
+  width: 52px;
+  height: 42px;
+  margin: 120px auto;
+  opacity: 0.3;
+  background: url("../assets/img/diamond.svg") no-repeat 0 0/contain;
 }
