@@ -127,7 +127,7 @@ body
 	text-align center
 	
 .work__project-list
-	margin 0
+	margin 20px 0 0
 	padding 0
 	list-style none
 	counter-reset project
@@ -172,7 +172,6 @@ body
 .work__hit-field_focus:after
 	background-image url('../assets/img/arrow-focus.svg')
 	transform translateX(0%)
-	
 	
 .work__agency
 	width 21%
@@ -254,7 +253,7 @@ body
 
 .about
 	max-width content-max-width
-	margin 0 auto
+	margin 60px auto 0
 	
 .about p
 	font-size 38px
@@ -269,10 +268,10 @@ body
 	display flex
 	flex-direction row
 	max-width content-max-width
-	margin 0 auto
+	margin 80px auto 0
 
 .awards__list
-	margin 0
+	margin -.778em 0 0
 	padding 0
 	list-style none
 	font-size 18px
@@ -292,9 +291,14 @@ body
 	display flex
 	flex-direction row
 	max-width content-max-width
-	margin 0 auto
+	margin 70px auto 0
+	
+.contact__body
+	flex 1
 
 .contact__email
+	display inline-block
+	margin-top -2.22em
 	font-family 'Apercu-Light'
 	font-size 36px
 	text-decoration none
@@ -303,17 +307,17 @@ body
 .contact__social-network-list
 	display flex
 	flex-direction row
-	margin 0
+	margin 1.5em 0 0
 	padding 0
 	list-style none
-
-.contact__social-network
-	position relative
-	margin-left 7.85em
 	font-family 'Apercu-Bold'
 	font-size 14px
 	letter-spacing .15em
 	text-transform uppercase
+
+.contact__social-network
+	position relative
+	margin-left 7.85em
 	
 	&:before
 		content ''
@@ -343,6 +347,6 @@ body
 .diamond
 	width 52px
 	height 42px
-	margin 0 auto
+	margin 120px auto
 	opacity .3
 	background url('../assets/img/diamond.svg') no-repeat 0 0 / contain
