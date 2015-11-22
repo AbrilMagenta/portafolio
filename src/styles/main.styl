@@ -172,6 +172,7 @@ body
 .about__header,
 .awards__header,
 .contact__header
+	width 21%
 	font-size 16px
 	text-transform uppercase
 	
@@ -182,7 +183,7 @@ body
 		height 1px
 		margin-left .875em
 		vertical-align middle
-		background black	
+		background black
 
 /**
  * About
@@ -202,13 +203,65 @@ body
  */
 
 .awards
+	display flex
+	flex-direction row
 	max-width content-max-width
 	margin 0 auto
+
+.awards__list
+	margin 0
+	padding 0
+	list-style none
+	font-size 18px
+	line-height 2.33
+	
+	
+.awards__project:before
+	content '\2014' ' '
 
 /**
  * Contact
  */
 
 .contact
+	display flex
+	flex-direction row
 	max-width content-max-width
 	margin 0 auto
+
+.contact__email
+	font-size 36px
+	text-decoration none
+	color inherit
+	
+.contact__social-network-list
+	display flex
+	flex-direction row
+	margin 0
+	padding 0
+	list-style none
+
+.contact__social-network
+	position relative
+	margin-left 7.85em
+	font-size 14px
+	text-transform uppercase
+	
+	&:before
+		content ''
+		position absolute
+		top 50%
+		left -4.78em
+		width 1.78em
+		height 1px
+		background black
+	
+	&:first-child
+		margin-left 0
+		
+		&:before
+			content: none
+
+.contact__social-network a
+	text-decoration none
+	color inherit
