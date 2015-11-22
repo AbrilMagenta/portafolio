@@ -215,7 +215,7 @@ body
 	transition opacity 0 linear
 	
 	+q-v-large()
-		width 15%
+		display none
 	
 .work__agency_focus
 	opacity 1
@@ -232,7 +232,7 @@ body
 	transition all 300ms ease-out-quad
 	
 	+q-v-large()
-		left -15%
+		left 0
 		width 70%
 	
 	&:before
@@ -241,6 +241,9 @@ body
 		width 24%
 		font-family 'Didot-Regular'
 		opacity .6
+		
+		+q-v-large()
+			width 15%
 
 .work__project-name_focus
 	left 0

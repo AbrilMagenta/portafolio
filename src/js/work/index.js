@@ -21,7 +21,6 @@ var Work = function(root) {
 	
 	var mql = matchMedia('(max-width: 971px)');
 	mql.addListener(function(mql) {
-		console.log('update query', mql.matches);
 		updateProjects(mql);
 	});
 	updateProjects(mql);
