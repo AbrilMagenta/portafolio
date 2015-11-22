@@ -1,12 +1,9 @@
 var $ = require('jquery');
-
-
 var SVG = require("./vendors/svg");
 
 var Particles = function  ( dom ) {
     
-    var density = 50,
-        speed = 0.2,
+    var densityLayer = 60,
         maxSize = 15,
         minSize = 10,
         fullHeight = $("#container").height(),
@@ -25,16 +22,21 @@ var Particles = function  ( dom ) {
 
         shapeColor = '#e9e9e9';
 
+    createParallaxElement();
 
-        
-    createWrapper();
 
-    for (var i = 0; i < density; i++) {
+    function createParallaxElement () {
+
+        createWrapper();
         
-        createShape(1.2, 0.3);
+        for (var i = 0; i < densityLayer; i++) {
+        
+        createShape(1, 0.3);
     
-    };
+        };
 
+        animateShape();
+    } 
 
     function createWrapper () {
 
@@ -46,7 +48,7 @@ var Particles = function  ( dom ) {
 
         shapeR =  Math.floor(Math.random() * maxSize) + minSize,
         shapeW = Math.floor(Math.random() * maxSize) + minSize,
-        randomNumb = Math.floor(Math.random() * 2) + 0;
+        randomNumb = Math.floor(Math.random() * 4) + 0;
                
         switch(randomNumb) {
 
@@ -55,26 +57,38 @@ var Particles = function  ( dom ) {
             break;
 
             case 1:
-                shape = shapesContainer.rect(shapeW, shapeW).attr({stroke: shapeColor, fill: shapeColor, 'stroke-width': 2}).move(100, 500)
+                shape = shapesContainer.rect(shapeW, shapeW).attr({stroke:shapeColor, 'fill-opacity': 0, 'stroke-width': 2}).move(100, 500)
             break;
 
             case 2:
-                shape = shapesContainer.path('M 36.521,94.728 106.934,94.728 106.934,24.313 Z').attr({ stroke:shapeColor, 'fill-opacity': 0, 'stroke-width': 2})
+                shape = shapesContainer.path('M54.99,80.448h44.449V36L54.99,80.448z').attr({ stroke:shapeColor, 'fill-opacity': 0, 'stroke-width': 2})
                 
             break;
 
             case 3:
-                shape = shapesContainer.path('M 0.428,125.405 -0.061,123.465 30.212,115.83 37.997,84.975 68.851,77.19 76.638,46.334 107.492,38.549 115.28,7.691 146.717,-0.243 147.207,1.697 116.927,9.338 109.139,40.196 78.284,47.981 70.499,78.836 39.645,86.622 31.86,117.476 Z').attr({ fill: shapeColor })
+                shape = shapesContainer.path('M 36.322,94.577 36.073,93.587 51.49,89.7 55.455,73.986 71.168,70.021 75.135,54.307 90.847,50.342 94.813,34.627 110.823,30.586 111.073,31.575 95.652,35.466 91.686,51.181 75.972,55.146 72.008,70.859 56.294,74.825 52.33,90.538 Z').attr({ fill: shapeColor })
             break;
             }                   
         
         randomScale = Math.random() * MaxScale + MinScale;
         randomTime = Math.floor(Math.random() * 8000) + 3000;
 
+        shape.opacity(randomScale);
         shape.scale(randomScale);
-        shape.translate(Math.floor(Math.random() * fullWidth) + 0, Math.floor(Math.random() * fullHeight) + -100);
-        shape.animate(randomTime, '>').rotate(Math.floor(Math.random() * 1000) + -1000).loop(0, true);
-        
+        shape.translate(Math.floor(Math.random() * fullWidth) + -200, Math.floor(Math.random() * fullHeight) + -300);
+    }
+
+    function animateShape () {
+
+        var allElements = element.querySelector('svg').children;
+
+        for (var i = 1; i < allElements.length; i++) {
+            var randomX = Math.floor(Math.random() * 150) + -100;
+            var randomY = Math.floor(Math.random() * 150) + -100;
+            var randomTime = Math.floor(Math.random() * 25) + 10;
+            var randomRotation = Math.floor(Math.random() * 630) + -360;
+            TweenMax.to(allElements[i], randomTime, {x: "+=" + randomX, y: "+=" + randomY, rotation:randomRotation, transformOrigin:"50% 50%", ease:Quad.easeOut, repeat:-1, yoyo:true});
+        };
     }
 
 }
