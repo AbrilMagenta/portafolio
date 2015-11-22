@@ -163,6 +163,7 @@ body
 
 .work__project
 	counter-increment project
+	padding 0 60px
 	overflow hidden
 	color black
 	background rgba(0, 0, 0, 0)
@@ -227,6 +228,9 @@ body
 	text-transform uppercase
 	transition all 300ms ease-out-quad
 	
+	+q-v-large()
+		width 70%
+	
 	&:before
 		content '. ' counter(project, decimal-leading-zero)
 		display inline-block
@@ -249,7 +253,10 @@ body
 	text-transform uppercase
 	transform translateX(-30%)
 	opacity 0
-	transition all 0 step-end
+	transition all 0ms step-end
+	
+	+q-v-large()
+		display none
 	
 .work__meta_focus
 	opacity 1
@@ -277,6 +284,7 @@ body
 	font-size 16px
 	letter-spacing .15em
 	text-transform uppercase
+	white-space nowrap
 	
 	&:after
 		content: ''
@@ -294,8 +302,10 @@ body
 .about
 	max-width content-max-width
 	margin 60px auto 0
+	padding 0 60px
 	
 .about p
+	margin 1em 0
 	font-size 38px
 	line-height 1.3157
 
@@ -309,6 +319,10 @@ body
 	flex-direction row
 	max-width content-max-width
 	margin 80px auto 0
+	padding 0 60px
+	
+	+q-v-large()
+		flex-direction column
 
 .awards__list
 	margin -.778em 0 0
@@ -316,6 +330,9 @@ body
 	list-style none
 	font-size 18px
 	line-height 2.33
+	
+	+q-v-large()
+		margin-top 1.5em
 	
 .awards__project
 	font-family 'Apercu-Light'
@@ -332,9 +349,16 @@ body
 	flex-direction row
 	max-width content-max-width
 	margin 70px auto 0
+	padding 0 60px
+	
+	+q-v-large()
+		flex-direction column
 	
 .contact__body
 	flex 1
+	
+	+q-v-large()
+		margin-top 1.5em
 
 .contact__email
 	display inline-block
@@ -343,6 +367,9 @@ body
 	font-size 36px
 	text-decoration none
 	color inherit
+	
+	+q-v-large()
+		margin 0
 	
 .contact__social-network-list
 	display flex
@@ -382,6 +409,9 @@ body
 	width 21px
 	height 83px
 	background url('../assets/img/back-to-top.svg') no-repeat 0 0 / contain;
+	
+	+q-v-large()
+		display none
 
 
 .diamond
