@@ -6,6 +6,7 @@ html
 
 
 content-max-width = 940px
+ease-out-quad = cubic-bezier(0.250, 0.460, 0.450, 0.940)
 
 body
 	margin 0
@@ -133,14 +134,16 @@ body
 	counter-reset project
 
 .work__project
+	counter-increment project
 	overflow hidden
 	color black
-	background none
-	counter-increment project
+	background rgba(0, 0, 0, 0)
+	transition all 150ms linear	
 	
 .work__project_focus
 	color white
-	background black
+	background rgba(0, 0, 0, 1)
+	transition-duration 150ms
 	
 .work__hit-field
 	display flex
@@ -168,6 +171,7 @@ body
 	margin-top -10px
 	background url('../assets/img/arrow.svg') 0 0 / contain no-repeat
 	transform translateX(-100%)
+	transition all 300ms ease-out-quad
 	
 .work__hit-field_focus:after
 	background-image url('../assets/img/arrow-focus.svg')
@@ -177,20 +181,23 @@ body
 	width 21%
 	font-family 'Didot-Regular'
 	font-size 32px
+	color white
 	opacity 0
-	transition all 300ms linear
+	transition opacity 0 linear
 	
 .work__agency_focus
 	opacity 1
+	transition-duration 250ms
+	transition-delay 50ms
 	
 .work__project-name
 	position relative
 	left -21%
-	width 28%
+	width 35%
 	font-size 16px
 	letter-spacing .15em
 	text-transform uppercase
-	transition all 300ms ease-out
+	transition all 300ms ease-out-quad
 	
 	&:before
 		content '. ' counter(project, decimal-leading-zero)
@@ -206,16 +213,20 @@ body
 	display flex
 	flex-direction row
 	list-style none
-	width 50%
+	width 44%
 	margin 0
 	padding 0
 	font-size 11px
 	letter-spacing .15em
 	text-transform uppercase
+	transform translateX(-30%)
 	opacity 0
+	transition all 0 step-end
 	
 .work__meta_focus
 	opacity 1
+	transform translateX(0)
+	transition transform 300ms ease-out-quad, opacity 300ms linear
 	
 .work__meta__item
 	margin-left 2.5em
@@ -229,6 +240,7 @@ body
 	
 .work__meta__field-value
 	font-family 'Apercu-Light'
+
 
 .about__header,
 .awards__header,
