@@ -9,6 +9,7 @@ var NavigationEach = function  ( dom ) {
 
     element.addEventListener('mouseenter', animateIn);
     element.addEventListener('mouseleave', animateOut);
+    element.addEventListener('click', scrollToElement);
 
     function animateIn () {
         TweenLite.to(topChild, 0.19, {top:"-100%", ease:Quad.easeOut});
@@ -22,9 +23,12 @@ var NavigationEach = function  ( dom ) {
     }
 
 
-/*    function scrollToElement () {
-       TweenLite.to(window, 2, {scrollTo:{y:400}});
-    }*/
+    function scrollToElement () {
+        var target = $('.work');
+        var top = target.offset().top;
+            $('html').animate({scrollTop: top}, 800);
+            return false;
+    }
 }
 
 module.exports = NavigationEach;

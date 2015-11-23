@@ -4,7 +4,11 @@
 q-extralarge()
   @media ( max-width: 1024px )
     {block}
-    
+
+q-v-large()
+ @media ( max-width: 971px )
+   {block}
+        
 q-large()
   @media ( max-width: 760px )
     {block}
@@ -21,14 +25,21 @@ q-small()
 html
 	-webkit-font-smoothing: antialiased;
 
-
 content-max-width = 940px
 ease-out-quad = cubic-bezier(0.250, 0.460, 0.450, 0.940)
 
 body
 	margin 0
 	font-family 'Apercu-Medium'
+	overflow hidden
 	
+.loader-element
+	position absolute
+	background-color white
+	opacity 1
+	z-index 5
+	width 100%
+	height 100%
 
 /*BACKGROUND*/
 
@@ -45,6 +56,7 @@ body
 .parallaxElement
 	position absolute
 	width 100%
+	top 0
 
 .container
 	position relative
@@ -345,7 +357,7 @@ body
 	
 	+q-medium()
 		margin-top 40px
-		padding 0 20px
+		padding 0 30px
 	
 .about p
 	margin 1em 0
@@ -356,7 +368,7 @@ body
 		font-size 28px
 		
 	+q-small()
-		font-size 22px
+		font-size 20px
 
 	
 /**

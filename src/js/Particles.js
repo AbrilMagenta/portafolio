@@ -5,13 +5,13 @@ var $stellar = require('./vendors/stellar');
 
 var Particles = function  ( dom ) {
     
-    var densityLayer = [40, 25, 20],
-        scaleMax = [0.6, 0.8, 1.5],
-        scaleMin = [0.2, 0.6, 0.9],
+    var densityLayer = [90, 25, 30],
+        scaleMax = [0.5, 1, 2],
+        scaleMin = [0.2, 0.6, 1.5],
         maxSize = 20,
         minSize = 10,
-        fullHeight = $('#container').height(),
-        fullWidth =  $('#container').width(),
+        fullHeight = $('html').height(),
+        fullWidth =  2000,
         num = 0,
         randomScale, 
         randomTime,
@@ -30,6 +30,9 @@ var Particles = function  ( dom ) {
 
 
 
+    $( window ).resize(function() {
+        $('.background-wrapper').height(fullHeight);
+    });
     $('.background-wrapper').height(fullHeight);
     createParallaxElement();
     $.stellar();
@@ -69,11 +72,11 @@ var Particles = function  ( dom ) {
 
                 case 2:
                     shape = shapesContainer.rect(10, 10).attr({stroke:shapeColor, 'stroke-width': 2, fill:shapeColor })
-                   /* shape = shapesContainer.path('M54.99,80.448h44.449V36L54.99,80.448z').attr({ stroke:shapeColor, 'fill-opacity': 0, 'stroke-width': 2})*/
+                   
                 break;
 
                 case 3:
-                    shape = shapesContainer.path('M 36.322,94.577 36.073,93.587 51.49,89.7 55.455,73.986 71.168,70.021 75.135,54.307 90.847,50.342 94.813,34.627 110.823,30.586 111.073,31.575 95.652,35.466 91.686,51.181 75.972,55.146 72.008,70.859 56.294,74.825 52.33,90.538 Z').attr({ fill: shapeColor })
+                     shape = shapesContainer.path('M54.99,80.448h44.449V36L54.99,80.448z').attr({ stroke:shapeColor, 'fill-opacity': 0, 'stroke-width': 1.5})
                 break;
                 }                   
             
@@ -89,12 +92,23 @@ var Particles = function  ( dom ) {
 
     function animateShape () {
 
+        var randomX;
+        var randomY;
+        var randomTime;
+        var plusOrMinus;
+        var randomRotation;
+
         for (var i = 1; i < allElements.length; i++) {
-            var randomX = Math.floor(Math.random() < 0.5 ? -1 : 1);
-            var randomY = Math.floor(Math.random() * 1000) - 500;
-            var randomTime = Math.floor(Math.random() * 200) + 100;
-            var randomRotation = Math.floor(Math.random() * 360) -360;
-            TweenMax.to(allElements[i], randomTime, {x: '-=500', rotation:randomRotation, transformOrigin:'50% 50%', ease:Quad.easeOut, repeat:-1, yoyo:true});
+
+            randomX = (Math.random() * 1 + 0)  < 0.5 ? "+=" + (Math.random() * fullWidth - 200) : "-=" + (Math.random() * fullWidth - 200);
+            randomY = (Math.random() * 1 + 0)  < 0.5 ? "+=" + (Math.random() * fullHeight - 200) : "-=" + (Math.random() * fullHeight - 200);
+            randomTime = Math.floor(Math.random() * 250) + 200;
+            plusOrMinus = (Math.random() * 1 + 0)  < 0.5 ? "+=360" : "-=360";
+            randomRotation = Math.floor(Math.random() * 360) - 360;
+
+            TweenMax.set(allElements[i], {rotation: randomRotation});
+            TweenMax.to(allElements[i], randomTime, {x: randomX, y: randomY, ease:Quad.easeOut, repeat:-1, yoyo:true, delay: Math.random() * 3 + 0});
+            TweenMax.to(allElements[i], Math.floor(Math.random() * 130) + 90, {rotation:plusOrMinus, transformOrigin:'50% 50%', ease:Quad.easeOut, repeat:-1, delay:Math.random() * 1 + 0, yoyo:true});
         };
     }
 
