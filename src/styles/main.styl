@@ -7,8 +7,13 @@ q-extralarge()
 
 q-v-large()
  @media ( max-width: 971px )
+<<<<<<< HEAD
    {block}
         
+=======
+   {block}    
+
+>>>>>>> 09fc1557f00807fe38bfbeb3b4a96037247bacbd
 q-large()
   @media ( max-width: 760px )
     {block}
@@ -33,6 +38,7 @@ body
 	font-family 'Apercu-Medium'
 	overflow hidden
 	
+<<<<<<< HEAD
 .loader-element
 	position absolute
 	background-color white
@@ -40,6 +46,11 @@ body
 	z-index 5
 	width 100%
 	height 100%
+=======
+#container
+	overflow hidden
+	
+>>>>>>> 09fc1557f00807fe38bfbeb3b4a96037247bacbd
 
 /*BACKGROUND*/
 
@@ -124,6 +135,7 @@ body
 .intro 
 	position relative
 	width 100%
+	overflow hidden // Prevent excess scroll in IE
 	text-align center
 
 .intro__wrapper
@@ -365,10 +377,14 @@ body
 	line-height 1.3157
 	
 	+q-medium()
+<<<<<<< HEAD
 		font-size 28px
 		
 	+q-small()
 		font-size 20px
+=======
+		font-size 22px
+>>>>>>> 09fc1557f00807fe38bfbeb3b4a96037247bacbd
 
 	
 /**
