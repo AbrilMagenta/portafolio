@@ -1,4 +1,5 @@
-;(function($, window, document, undefined) {
+var $ = require('jquery');
+
 
 	var pluginName = 'stellar',
 		defaults = {
@@ -648,4 +649,3 @@
 
 	// Expose the plugin class so it can be modified
 	window.Stellar = Plugin;
-}(jQuery, this, document));

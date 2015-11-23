@@ -1,3 +1,4 @@
+var $ = require('jquery');
 var TweenMax = require('gsap');
 
 var NavigationEach = function  ( dom ) {
@@ -20,6 +21,10 @@ var NavigationEach = function  ( dom ) {
         TweenLite.to(menuLine, 0.19, {left:"-100%", ease:Quad.easeOut});
     }
 
+
+/*    function scrollToElement () {
+       TweenLite.to(window, 2, {scrollTo:{y:400}});
+    }*/
 }
 
 module.exports = NavigationEach;

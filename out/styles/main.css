@@ -14,6 +14,14 @@ body {
   width: 100%;
   z-index: -1;
 }
+.background-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+.parallaxElement {
+  position: absolute;
+  width: 100%;
+}
 .container {
   position: relative;
   width: 100%;
@@ -91,10 +99,20 @@ body {
   font-family: 'Didot-Regular';
   font-size: 9vw;
 }
+@media (max-width: 641px) {
+  .intro__name {
+    font-size: 11vw;
+  }
+}
 .intro__role {
   font-family: 'Apercu-Medium';
   font-size: 17px;
   letter-spacing: 1px;
+}
+@media (max-width: 641px) {
+  .intro__role {
+    font-size: 14px;
+  }
 }
 .intro__works {
   position: absolute;

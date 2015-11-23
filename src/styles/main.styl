@@ -5,10 +5,6 @@ q-extralarge()
   @media ( max-width: 1024px )
     {block}
     
-q-v-large()
-  @media ( max-width: 971px )
-    {block}
-
 q-large()
   @media ( max-width: 760px )
     {block}
@@ -41,7 +37,14 @@ body
 	top 0
 	width 100%
 	z-index -1
-	
+
+.background-wrapper 
+	position relative
+	overflow hidden
+
+.parallaxElement
+	position absolute
+	width 100%
 
 .container
 	position relative
@@ -122,11 +125,17 @@ body
 .intro__name
 	font-family 'Didot-Regular'
 	font-size 9vw
+	
+	+q-medium()
+		font-size 11vw
 
 .intro__role 
 	font-family 'Apercu-Medium'
 	font-size 17px
 	letter-spacing 1px
+	
+	+q-medium()
+		font-size 14px
 
 .intro__works 
 	position absolute
