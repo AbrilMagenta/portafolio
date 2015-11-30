@@ -4,7 +4,7 @@ var TweenMax = require('gsap');
 
 /*CORE*/
 var Work = require('./work');
-var Particles = require('./Particles');
+var Particles = require('./particles/Particles');
 var Navigation = require('./navigation/Navigation');
 
 
@@ -15,7 +15,7 @@ var particlesContainer = document.querySelector('#background');
 
 /*INIT CORE*/
 var work = new Work( document.querySelector('.work') );
-var navigation = new Navigation(container)
+var navigation = new Navigation(container);
 
 
 /*CUSTOM FUNCTIONS*/
@@ -23,22 +23,23 @@ var navigation = new Navigation(container)
 
 $(function() {
 
-	var sBrowser, sUsrAg = navigator.userAgent;
-
-	 
-	if(sUsrAg.indexOf("Chrome") > -1) {
-	    var particles = new Particles( particlesContainer );
-	}
-	
 	$('body').css('overflow-y', 'auto');
-	TweenLite.to($('.loader-element'), 0.5, {opacity:0, onComplete:function  () {
-	  $('.loader-element').css('display', 'none');
 
-	}});
+   var sBrowser, sUsrAg = navigator.userAgent;
+
+
+  if(sUsrAg.indexOf("Chrome") > -1) {
+    var particles = new Particles ( particlesContainer );
+  }
+
+	
+  TweenLite.to($('.loader-element'), 0.5, {opacity:0, onComplete:function  () {
+	  $('.loader-element').css('display', 'none');
+  }});
 
  	$( window ).resize(function() {
 		document.querySelector('.intro').style.height = window.innerHeight + 'px';
-  	});
+  });
 
 
   	$('.nav-work').click( function  () {

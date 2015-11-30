@@ -52,7 +52,7 @@ gulp.task("style", function() {
 			}))
 			.on( "error", gutil.log )
 			.on( "error", gutil.beep )
-		.pipe(postcss([autoprefixer({browsers: ['last 2 versions']})]))
+/*		.pipe(postcss([autoprefixer({browsers: ['last 2 versions']})]))*/
 		.pipe( gulp.dest( "./out/styles" ) )
 		.pipe( browserSync.stream() );
 

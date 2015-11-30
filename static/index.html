@@ -6,10 +6,10 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Abril Alvarez Portfolio</title>
+        <title>Abril Alvarez Portafolio</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href='https://fonts.googleapis.com/css?family=Lato:400,300' rel='stylesheet' type='text/css'>
+        <link rel="icon" type="image/png" href="assets/favicon.ico">
         <link rel="stylesheet" href="./styles/main.css">
     </head>
     <body>
@@ -23,9 +23,8 @@
 
         <div id="background">
             <div class="background-wrapper">
-                <div id="background-parallax" class="parallaxElement" data-stellar-ratio="0.6"></div>
-                <div id="background-parallax1" class="parallaxElement" data-stellar-ratio="0.4"></div>
-                <div id="background-parallax2" class="parallaxElement" data-stellar-ratio="0.2"></div>
+                <canvas id="background-parallax" class="parallaxElement" data-stellar-ratio="0.2"></canvas>
+                <canvas id="background-parallax2" class="parallaxElement" data-stellar-ratio="0.1"></canvas>
             </div>
         </div>
 
@@ -67,6 +66,38 @@
                             </ul>
                         </a>
                     </li>
+                    <li class="work__project">
+                        <a class="work__hit-field" href="http://www.mikebloomberg.com/" target="_blank">
+                            <div class="work__agency">Firstborn</div>
+                            <div class="work__project-name">Mike Bloomberg</div>
+                            <ul class="work__meta">
+                                <li class="work__meta__item">
+                                    <div class="work__meta__field-name">Year</div>
+                                    <div class="work__meta__field-value">2015</div>
+                                </li>
+                                <li class="work__meta__item">
+                                    <div class="work__meta__field-name">My role</div>
+                                    <div class="work__meta__field-value">Front End</div>
+                                </li>
+                            </ul>
+                        </a>
+                    </li>
+                    <li class="work__project">
+                        <a class="work__hit-field" href="https://www.fuelupforbattle.com" target="_blank">
+                            <div class="work__agency">Firstborn</div>
+                            <div class="work__project-name">Fuel For Battle</div>
+                            <ul class="work__meta">
+                                <li class="work__meta__item">
+                                    <div class="work__meta__field-name">Year</div>
+                                    <div class="work__meta__field-value">2015</div>
+                                </li>
+                                <li class="work__meta__item">
+                                    <div class="work__meta__field-name">My role</div>
+                                    <div class="work__meta__field-value">Developer (Face Detection)</div>
+                                </li>
+                            </ul>
+                        </a>
+                    </li>  
                     
                     <li class="work__project">
                         <a class="work__hit-field" href="http://metaljunkthegame.com/" target="_blank">
@@ -101,22 +132,6 @@
                         </a>
                     </li>
                     <li class="work__project">
-                        <a class="work__hit-field" href="http://www.mikebloomberg.com/" target="_blank">
-                            <div class="work__agency">Firstborn</div>
-                            <div class="work__project-name">Mike Bloomberg</div>
-                            <ul class="work__meta">
-                                <li class="work__meta__item">
-                                    <div class="work__meta__field-name">Year</div>
-                                    <div class="work__meta__field-value">2015</div>
-                                </li>
-                                <li class="work__meta__item">
-                                    <div class="work__meta__field-name">My role</div>
-                                    <div class="work__meta__field-value">Front End</div>
-                                </li>
-                            </ul>
-                        </a>
-                    </li>                    
-                    <li class="work__project">
                         <a class="work__hit-field" href="https://www.ampenergy.com/" target="_blank">
                             <div class="work__agency">Firstborn</div>
                             <div class="work__project-name">AMP Energy</div>
@@ -132,35 +147,19 @@
                             </ul>
                         </a>
                     </li>
-                    <li class="work__project">
-                        <a class="work__hit-field" href="https://www.fuelupforbattle.com" target="_blank">
-                            <div class="work__agency">Firstborn</div>
-                            <div class="work__project-name">Fuel For Battle</div>
-                            <ul class="work__meta">
-                                <li class="work__meta__item">
-                                    <div class="work__meta__field-name">Year</div>
-                                    <div class="work__meta__field-value">2015</div>
-                                </li>
-                                <li class="work__meta__item">
-                                    <div class="work__meta__field-name">My role</div>
-                                    <div class="work__meta__field-value">Developer (Face Detection)</div>
-                                </li>
-                            </ul>
-                        </a>
-                    </li>
                 </ol>
             </div>
             
             <div class="about">
                 <header class="about__header">About me</header>
                 <p>
-                    Hello, my name is <strong>Abril Alvarez</strong> I´m a 25 years old creative developer. I have a wide sensitivity to art and I have found the midpoint with my passion for programming, science and nature.
+                    Hello, my name is <strong>Abril Alvarez</strong> I'm a 26 years old creative developer. I have a wide sensitivity to art and I have found the midpoint with my passion for programming, science and nature.
                 </p>
                 <p>
                     I believe that the code of the universe is a web of perfection: Patterns are exposed everywhere generating life and beauty. I'm in love with these natural patterns and my dream is to, someday, represent them on a screen.
                 </p>
                 <p>
-                    I’m from <strong>Mexico City</strong> currently based in Brooklyn,and working as Creative Developer at <strong>Firstborn NY</strong>.
+                    I’m from <strong>Mexico City</strong> currently based in Brooklyn and working as Creative Developer at <strong>Firstborn NY</strong>.
                 </p>
             </div>
             
@@ -170,6 +169,10 @@
                     <li>
                         <span class="awards__name">THE FWA</span>
                         <span class="awards__project">Volkswagen Car Configurator / Site of the Day</span>
+                    </li>
+                    <li>
+                        <span class="awards__name">CSS Design Awards</span>
+                        <span class="awards__project">Volkswagen Car Configurator / Nominated Site of the Year</span>
                     </li>
                     <li>
                         <span class="awards__name">THE FWA</span>

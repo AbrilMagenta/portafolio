@@ -7,13 +7,8 @@ q-extralarge()
 
 q-v-large()
  @media ( max-width: 971px )
-<<<<<<< HEAD
    {block}
-        
-=======
-   {block}    
 
->>>>>>> 09fc1557f00807fe38bfbeb3b4a96037247bacbd
 q-large()
   @media ( max-width: 760px )
     {block}
@@ -26,7 +21,6 @@ q-small()
   @media ( max-width: 321px )
     {block}
 
-
 html
 	-webkit-font-smoothing: antialiased;
 
@@ -38,7 +32,7 @@ body
 	font-family 'Apercu-Medium'
 	overflow hidden
 	
-<<<<<<< HEAD
+
 .loader-element
 	position absolute
 	background-color white
@@ -46,11 +40,9 @@ body
 	z-index 5
 	width 100%
 	height 100%
-=======
+
 #container
 	overflow hidden
-	
->>>>>>> 09fc1557f00807fe38bfbeb3b4a96037247bacbd
 
 /*BACKGROUND*/
 
@@ -62,12 +54,9 @@ body
 
 .background-wrapper 
 	position relative
-	overflow hidden
 
 .parallaxElement
 	position absolute
-	width 100%
-	top 0
 
 .container
 	position relative
@@ -203,7 +192,7 @@ body
 	overflow hidden
 	color black
 	background rgba(0, 0, 0, 0)
-	transition all 150ms linear
+	transition all 10ms linear
 	
 	+q-medium()
 		padding 0 20px
@@ -211,7 +200,7 @@ body
 .work__project_focus
 	color white
 	background rgba(0, 0, 0, 1)
-	transition-duration 150ms
+	transition-duration 100ms
 	
 .work__hit-field
 	display flex
@@ -377,16 +366,8 @@ body
 	line-height 1.3157
 	
 	+q-medium()
-<<<<<<< HEAD
-		font-size 28px
-		
-	+q-small()
-		font-size 20px
-=======
 		font-size 22px
->>>>>>> 09fc1557f00807fe38bfbeb3b4a96037247bacbd
-
-	
+		
 /**
  * Awards
  */
@@ -517,10 +498,10 @@ body
 	+q-v-large()
 		display none
 
-
 .diamond
 	width 52px
 	height 42px
-	margin 120px auto
+	padding 60px 0 0
+	margin 60px auto 0
 	opacity .3
 	background url('../assets/img/diamond.svg') no-repeat 0 0 / contain
